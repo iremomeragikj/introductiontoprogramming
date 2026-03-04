@@ -20,7 +20,7 @@ int main(void)
 
     // TODO: Print the winner (or "Tie!" if scores are equal)
 
-    if(score1>score2)
+    if(score1 > score2)
     {
         printf("Player 1 wins!\n");
     }
