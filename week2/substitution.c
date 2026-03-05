@@ -40,28 +40,39 @@ int main(int argc, string argv[])
 
     // STEP 3: Encrypt and print ciphertext
     printf("ciphertext: ");
+
     for(int i = 0; i < strlen(plaintext); i++)
     {
-        
+        char c = plaintext[i];
+
+        if(isalpha(c))
+        {
+            int position;
+            if(isupper(c))
+            {
+                position = c - 'A';
+            }
+            else
+            {
+                position = c -'a';
+            }
+
+            char substituted = argv[1][position];
+
+            if(isupper(c))
+            {
+                printf("%c", toupper(subtituted));
+            }
+            else
+            {
+                printf("%c", tolower(substituted));
+            }
+        }
+        else
+        {
+            printf("%c", c);
+        }
     }
-    // For each character in plaintext:
-    //   - If it's a letter, find its position in the alphabet (0-25)
-    //   - Look up the substituted letter from argv[1] at that position
-    //   - Preserve the original case
-    //   - Non-letters are printed unchanged
-    //
-    // TODO: Print "ciphertext: " then loop through each character
-    //
-    // Hints:
-    //   Position of uppercase C: 'C' - 'A' = 2
-    //   Position of lowercase c: 'c' - 'a' = 2
-    //   The substituted letter: argv[1][position]
-    //   To preserve case: if original was uppercase, use toupper(substituted_letter)
-    //                     if original was lowercase, use tolower(substituted_letter)
-
-    printf("ciphertext: ");
-
-    // TODO: loop and print each encrypted character
 
     printf("\n");
     return 0;
