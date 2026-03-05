@@ -41,7 +41,7 @@ int main(int argc, string argv[])
 
             if(isupper(c))
             {
-                printf("%c", toupper(subtituted));
+                printf("%c", toupper(substituted));
             }
             else
             {
