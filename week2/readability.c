@@ -41,21 +41,26 @@ int main(void)
     int sentences = count_sentences(text);
 
     // TODO: Compute L and S (averages per 100 words)
-    //   Hint: cast to float before dividing to avoid integer division!
-    //   float L = 100.0 * letters / words;
-    //   float S = 100.0 * sentences / words;
+    float L = 100.0 * letters / words;
+    float S = 100.0 * sentences / words;
 
 
     // TODO: Apply the Coleman-Liau formula
-    //   index = round(0.0588 * L - 0.296 * S - 15.8)
-    //   Use round() from <math.h> and store as int
-
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
 
     // TODO: Print the grade level
-    //   if index >= 16  → printf("Grade 16+\n");
-    //   if index < 1    → printf("Before Grade 1\n");
-    //   otherwise       → printf("Grade %i\n", index);
-
+    if (index >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else if (index < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else
+    {
+        printf("Grade %i\n", index);
+    }
 }
 
 // ---------------------------------------------------------------------------
