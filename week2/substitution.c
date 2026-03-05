@@ -14,6 +14,7 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
+    string key = argv[1];
 
     // STEP 2: Get the plaintext from the user
     string plaintext = get_string("plaintext:  ");
@@ -21,7 +22,9 @@ int main(int argc, string argv[])
     // STEP 3: Encrypt and print ciphertext
     printf("ciphertext: ");
 
-    for (int i = 0; i < strlen(plaintext); i++)
+    int len = strlen(plaintext);
+
+    for (int i = 0; i < len; i++)
     {
         char c = plaintext[i];
 
@@ -65,9 +68,10 @@ bool is_valid_key(string key)
     {
         return false;
     }
+
     bool seen[26] = {false};
 
-    for (int i = 0; i < strlen(key); i++)
+    for (int i = 0; i < 26; i++)
     {
         if (!isalpha(key[i]))
         {
