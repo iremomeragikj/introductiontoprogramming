@@ -64,9 +64,5 @@ int compute_score(string word)
         }
     }
 
-    // TODO: Loop through each character of word
-    // TODO: Add the correct point value to score
-    // TODO: Return the total score
-
     return score;
 }
