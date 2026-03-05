@@ -69,7 +69,7 @@ bool is_valid_key(string key)
 
     for(int i = 0; i < strlen(key); i++)
     {
-        if(isalpha(key[i]))
+        if(!isalpha(key[i]))
         {
             return false;
         }
