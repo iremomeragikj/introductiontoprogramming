@@ -26,7 +26,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// Function prototypes — do NOT change these signatures
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
