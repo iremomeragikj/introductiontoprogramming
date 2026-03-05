@@ -34,23 +34,6 @@ int main(void)
     }
 }
 
-// ---------------------------------------------------------------------------
-// TODO: Implement compute_score
-// ---------------------------------------------------------------------------
-// Given a word, return its Scrabble score.
-//
-// Rules:
-//   - Use the POINTS array to look up each letter's value
-//   - Uppercase and lowercase letters have the SAME point value
-//   - Non-letter characters (spaces, punctuation) score 0 points
-//
-// Hints:
-//   - Loop through each character: for (int i = 0; i < strlen(word); i++)
-//   - Check if a char is uppercase: isupper(word[i])
-//   - For uppercase 'A': POINTS['A' - 'A'] = POINTS[0] = 1
-//   - For lowercase 'a': POINTS['a' - 'a'] = POINTS[0] = 1
-//   - Use isalpha(word[i]) to skip non-letter characters
-// ---------------------------------------------------------------------------
 int compute_score(string word)
 {
     int score = 0;
