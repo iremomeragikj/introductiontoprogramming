@@ -9,7 +9,7 @@ bool is_valid_key(string key);
 int main(int argc, string argv[])
 {
     // STEP 1: Validate command-line arguments
-    if(argc != 2 || !is_valid_key(argv[1]))
+    if (argc != 2 || !is_valid_key(argv[1]))
     {
         printf("Usage: ./substitution key\n");
         return 1;
@@ -21,25 +21,25 @@ int main(int argc, string argv[])
     // STEP 3: Encrypt and print ciphertext
     printf("ciphertext: ");
 
-    for(int i = 0; i < strlen(plaintext); i++)
+    for (int i = 0; i < strlen(plaintext); i++)
     {
         char c = plaintext[i];
 
-        if(isalpha(c))
+        if (isalpha(c))
         {
             int position;
-            if(isupper(c))
+            if (isupper(c))
             {
                 position = c - 'A';
             }
             else
             {
-                position = c -'a';
+                position = c - 'a';
             }
 
             char substituted = argv[1][position];
 
-            if(isupper(c))
+            if (isupper(c))
             {
                 printf("%c", toupper(substituted));
             }
@@ -67,16 +67,16 @@ bool is_valid_key(string key)
     }
     bool seen[26] = {false};
 
-    for(int i = 0; i < strlen(key); i++)
+    for (int i = 0; i < strlen(key); i++)
     {
-        if(!isalpha(key[i]))
+        if (!isalpha(key[i]))
         {
             return false;
         }
 
         int index = tolower(key[i]) - 'a';
 
-        if(seen[index])
+        if (seen[index])
         {
             return false;
         }
