@@ -30,39 +30,19 @@ char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
-    if(argc != 2 || a)
+    if(argc != 2 || !only_digits(argv[1]))
     {
-        printf("Usage error\n");
+        printf("Usage: ./caesar key\n");
         return 1;
     }
-    // ---------------------------------------------------------------------------
-    // STEP 1: Validate command-line arguments
-    // ---------------------------------------------------------------------------
-    // The program must be called with exactly one argument: ./caesar KEY
-    // If argc != 2, OR if the key is not all digits, print the usage message
-    // and return 1 (indicating an error).
-    //
-    // TODO: Check that argc == 2
-    // TODO: Check that argv[1] contains only digit characters using only_digits()
-    // If either check fails:
-    //   printf("Usage: ./caesar key\n");
-    //   return 1;
 
+    int key = atoi(argv[1]);
 
-    // ---------------------------------------------------------------------------
-    // STEP 2: Convert the key from string to int
-    // ---------------------------------------------------------------------------
-    // TODO: Use atoi() to convert argv[1] to an integer.
-    //   int key = atoi(argv[1]);
+    string plaintext = get_string("plaintext:  ");
 
+    printf("ciphertext: ");
 
-    // ---------------------------------------------------------------------------
-    // STEP 3: Get the plaintext from the user
-    // ---------------------------------------------------------------------------
-    // TODO: Use get_string() to prompt for plaintext.
-    //   string plaintext = get_string("plaintext:  ");
-
-
+    for(int i = 0; i < strlen(plaintext))
     // ---------------------------------------------------------------------------
     // STEP 4: Encrypt and print the ciphertext
     // ---------------------------------------------------------------------------
@@ -74,7 +54,7 @@ int main(int argc, string argv[])
     //   printf("\n");
     //
     // The output should start with "ciphertext: " (with a trailing space):
-    //   printf("ciphertext: ");
+    //
 
 }
 
