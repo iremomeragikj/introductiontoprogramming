@@ -42,55 +42,40 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
 
-    for(int i = 0; i < strlen(plaintext))
-    // ---------------------------------------------------------------------------
-    // STEP 4: Encrypt and print the ciphertext
-    // ---------------------------------------------------------------------------
-    // TODO: Loop through each character of plaintext.
-    //       Call rotate(c, key) for each character to get the encrypted version.
-    //       Print each encrypted character WITHOUT a newline inside the loop.
-    //
-    // After the loop, print a newline:
-    //   printf("\n");
-    //
-    // The output should start with "ciphertext: " (with a trailing space):
-    //
-
+    for(int i = 0; i < strlen(plaintext); i++)
+    {
+        char encrypted = rotate(plaintext[i], key);
+        printf("%c", encrypted);
+    }
+    printf("\n");
+    return 0;
 }
 
-// ---------------------------------------------------------------------------
-// TODO: Implement only_digits
-// ---------------------------------------------------------------------------
-// Return true if every character in s is a digit (0-9), false otherwise.
-// Hint: use isdigit() from <ctype.h>
-// ---------------------------------------------------------------------------
 bool only_digits(string s)
 {
-    // TODO: Loop through each character of s
-    // TODO: If any character is NOT a digit, return false
-    // TODO: If all characters are digits, return true
+    for(int i = 0; i < strlen(s); i++)
+    {
+        if(!isdigit(s[i]))
+        {
+            return false;
+        }
+    }
 
-    return true; // placeholder — replace this
+    return true;
 }
 
-// ---------------------------------------------------------------------------
-// TODO: Implement rotate
-// ---------------------------------------------------------------------------
-// Rotate character c forward by n positions in the alphabet.
-// Preserve case: uppercase stays uppercase, lowercase stays lowercase.
-// Non-letter characters are returned UNCHANGED.
-//
-// The math (for uppercase):
-//   char encrypted = (c - 'A' + n) % 26 + 'A';
-//
-// The math (for lowercase):
-//   char encrypted = (c - 'a' + n) % 26 + 'a';
-// ---------------------------------------------------------------------------
 char rotate(char c, int n)
 {
-    // TODO: If c is uppercase, rotate it and return the result
-    // TODO: If c is lowercase, rotate it and return the result
-    // TODO: If c is not a letter, return c unchanged
-
-    return c; // placeholder — replace this
+    if(isupper(c))
+    {
+        return (c - 'A' + n) % 26 + 'A';
+    }
+    else if (islower(n))
+    {
+        return (c - 'a' + n) % 26 + 'a';
+    }
+    else
+    {
+         return c;
+    }
 }
