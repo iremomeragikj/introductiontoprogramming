@@ -28,29 +28,22 @@ bool is_valid_key(string key);
 
 int main(int argc, string argv[])
 {
-    // ---------------------------------------------------------------------------
     // STEP 1: Validate command-line arguments
-    // ---------------------------------------------------------------------------
-    // Must be called with exactly one argument.
-    // The key must be valid (see is_valid_key below).
-    //
-    // If invalid:
-    //   printf("Usage: ./substitution key\n");
-    //   return 1;
+    if(argc != 2 || !is_valid_key(argv[1]))
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
 
-    // TODO: Check argc == 2
-    // TODO: Check is_valid_key(argv[1])
-
-
-    // ---------------------------------------------------------------------------
     // STEP 2: Get the plaintext from the user
-    // ---------------------------------------------------------------------------
-    // TODO: Use get_string("plaintext:  ") and store in a variable
+    string plaintext = get_string("plaintext:  ");
 
-
-    // ---------------------------------------------------------------------------
     // STEP 3: Encrypt and print ciphertext
-    // ---------------------------------------------------------------------------
+    printf("ciphertext: ");
+    for(int i = 0; i < strlen(plaintext); i++)
+    {
+        
+    }
     // For each character in plaintext:
     //   - If it's a letter, find its position in the alphabet (0-25)
     //   - Look up the substituted letter from argv[1] at that position
