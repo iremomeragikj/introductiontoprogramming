@@ -30,6 +30,11 @@ char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
+    if(argc != 2 || a)
+    {
+        printf("Usage error\n");
+        return 1;
+    }
     // ---------------------------------------------------------------------------
     // STEP 1: Validate command-line arguments
     // ---------------------------------------------------------------------------
