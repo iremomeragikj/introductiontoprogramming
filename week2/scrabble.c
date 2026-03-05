@@ -55,6 +55,11 @@ int compute_score(string word)
 {
     int score = 0;
 
+    for(int i = 0; len=strlen(word); i < len; i++)
+    {
+        if
+    }
+
     // TODO: Loop through each character of word
     // TODO: Add the correct point value to score
     // TODO: Return the total score
