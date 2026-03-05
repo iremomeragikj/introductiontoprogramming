@@ -55,12 +55,12 @@ int compute_score(string word)
 {
     int score = 0;
 
-    for(int i = 0; i < strlen(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
-        if(isalpha(word[i]))
+        if (isalpha(word[i]))
         {
-            int index = toupper(word[i] - 'A');
-            score += POINTS[Iin]
+            int index = toupper(word[i]) - 'A';
+            score += POINTS[index];
         }
     }
 
