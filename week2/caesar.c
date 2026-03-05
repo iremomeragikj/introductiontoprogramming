@@ -16,7 +16,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    int key = atoi(argv[1]);
+    int key = atoi(argv[1]) % 26;
 
     string plaintext = get_string("plaintext:  ");
 
