@@ -70,7 +70,7 @@ char rotate(char c, int n)
     {
         return (c - 'A' + n) % 26 + 'A';
     }
-    else if (islower(n))
+    else if (islower(c))
     {
         return (c - 'a' + n) % 26 + 'a';
     }
